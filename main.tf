@@ -43,3 +43,11 @@ resource "null_resource" "run_command" {
   }
 }
 
+resource "null_resource" "os_info" {
+  provisioner "local-exec" {
+    command = "lsb_release -a"
+  }
+  triggers = {
+    run_every_time = uuid()
+  }
+}
