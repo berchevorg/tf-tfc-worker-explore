@@ -51,3 +51,12 @@ resource "null_resource" "os_info" {
     run_every_time = uuid()
   }
 }
+
+resource "null_resource" "os_info" {
+  provisioner "local-exec" {
+    command = "aws --version"
+  }
+  triggers = {
+    run_every_time = uuid()
+  }
+}
