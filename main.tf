@@ -52,7 +52,7 @@ resource "null_resource" "os_info" {
   }
 }
 
-resource "null_resource" "os_info" {
+resource "null_resource" "aws" {
   provisioner "local-exec" {
     command = "aws --version"
   }
