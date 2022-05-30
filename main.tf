@@ -43,9 +43,9 @@ resource "null_resource" "run_command" {
   }
 }
 
-resource "null_resource" "os_info" {
+resource "null_resource" "pwd" {
   provisioner "local-exec" {
-    command = "lsb_release -a"
+    command = "pwd"
   }
   triggers = {
     run_every_time = uuid()
