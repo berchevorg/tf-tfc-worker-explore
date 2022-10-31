@@ -27,7 +27,8 @@
 
 resource "null_resource" "mem-check" {
   provisioner "local-exec" {
-    command = "cat /proc/meminfo | grep 'MemTotal'"
+    #command = "cat /proc/meminfo | grep 'MemTotal'"
+    command = "cat /proc/meminfo"
   }
   triggers = {
     run_every_time = uuid()
