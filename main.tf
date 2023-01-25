@@ -25,15 +25,15 @@
 #   }
 # }
 
-resource "null_resource" "mem-check" {
-  provisioner "local-exec" {
-    #command = "cat /proc/meminfo | grep 'MemTotal'"
-    command = "cat /proc/meminfo"
-  }
-  triggers = {
-    run_every_time = uuid()
-  }
-}
+# resource "null_resource" "mem-check" {
+#   provisioner "local-exec" {
+#     #command = "cat /proc/meminfo | grep 'MemTotal'"
+#     command = "cat /proc/meminfo"
+#   }
+#   triggers = {
+#     run_every_time = uuid()
+#   }
+# }
 
 # resource "null_resource" "run_command" {
 #   provisioner "local-exec" {
@@ -61,3 +61,13 @@ resource "null_resource" "mem-check" {
 #     run_every_time = uuid()
 #   }
 # }
+
+
+resource "null_resource" "az" {
+  provisioner "local-exec" {
+    command = "which az"
+  }
+  triggers = {
+    run_every_time = uuid()
+  }
+}
