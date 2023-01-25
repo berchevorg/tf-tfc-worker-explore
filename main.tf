@@ -53,21 +53,21 @@
 #   }
 # }
 
-# resource "null_resource" "aws" {
-#   provisioner "local-exec" {
-#     command = "aws --version"
-#   }
-#   triggers = {
-#     run_every_time = uuid()
-#   }
-# }
-
-
-resource "null_resource" "az" {
+resource "null_resource" "aws" {
   provisioner "local-exec" {
-    command = "which az"
+    command = "aws --version"
   }
   triggers = {
     run_every_time = uuid()
   }
 }
+
+
+# resource "null_resource" "az" {
+#   provisioner "local-exec" {
+#     command = "which az"
+#   }
+#   triggers = {
+#     run_every_time = uuid()
+#   }
+# }
