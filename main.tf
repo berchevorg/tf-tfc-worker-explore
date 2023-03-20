@@ -16,14 +16,14 @@ resource "null_resource" "env" {
   }
 }
 
-resource "null_resource" "cat-backend-override" {
-  provisioner "local-exec" {
-    command = "cat zzz_backend_override.tf.json"
-  }
-  triggers = {
-    run_every_time = uuid()
-  }
-}
+# resource "null_resource" "cat-backend-override" {
+#   provisioner "local-exec" {
+#     command = "cat zzz_backend_override.tf.json"
+#   }
+#   triggers = {
+#     run_every_time = uuid()
+#   }
+# }
 
 resource "null_resource" "mem-check" {
   provisioner "local-exec" {
