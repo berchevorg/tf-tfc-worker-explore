@@ -71,3 +71,13 @@ resource "null_resource" "aws" {
 #     run_every_time = uuid()
 #   }
 # }
+
+
+resource "null_resource" "sleep" {
+  provisioner "local-exec" {
+    command = "sleep 120"
+  }
+  triggers = {
+    run_every_time = uuid()
+  }
+}
