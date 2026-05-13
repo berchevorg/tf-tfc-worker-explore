@@ -63,9 +63,9 @@ resource "null_resource" "aws" {
 }
 
 
-resource "null_resource" "az" {
+resource "null_resource" "free-m" {
    provisioner "local-exec" {
-     command = "which gcloud"
+     command = "free -m"
    }
    triggers = {
      run_every_time = uuid()
