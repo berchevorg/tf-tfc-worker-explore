@@ -16,9 +16,9 @@ resource "null_resource" "env" {
   }
 }
 
- resource "null_resource" "MEM" {
+ resource "null_resource" "df" {
    provisioner "local-exec" {
-     command = "cat /sys/fs/cgroup/memory.max"
+     command = "df -hT"
    }
    triggers = {
      run_every_time = uuid()
