@@ -37,7 +37,7 @@ resource "null_resource" "mem-check" {
 
 resource "null_resource" "cpu" {
   provisioner "local-exec" {
-    command = "cat /sys/fs/cgroup/cpu/cpu.cfs_quota_us"
+    command = "cat /proc/cpuinfo"
   }
   triggers = {
     run_every_time = uuid()
