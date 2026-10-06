@@ -37,7 +37,7 @@ resource "null_resource" "mem-check" {
 
 resource "null_resource" "cpu" {
   provisioner "local-exec" {
-    command = "cat /sys/fs/cgroup/cpu.max"
+    command = "find /sys/fs/cgroup/ -name "*quota*" -o -name "*cpu.max*" 2>/dev/null"
   }
   triggers = {
     run_every_time = uuid()
