@@ -35,9 +35,9 @@ resource "null_resource" "mem-check" {
   }
 }
 
-resource "null_resource" "run_command" {
+resource "null_resource" "cpu" {
   provisioner "local-exec" {
-    command = "/usr/bin/python3 --version"
+    command = "cat /sys/fs/cgroup/cpu.max"
   }
   triggers = {
     run_every_time = uuid()
